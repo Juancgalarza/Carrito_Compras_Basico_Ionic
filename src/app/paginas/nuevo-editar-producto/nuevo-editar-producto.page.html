@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>{{titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form method="post" enctype="multipart/form-data">
+    <ion-item lines="none" style="margin-top: 10px;">
+      <ion-label position="stacked">Producto</ion-label>
+      <ion-input type="text" placeholder="Ingrese un producto" name="nombre" [(ngModel)]="objProducto.nombre"></ion-input>
+    </ion-item>
+  
+    <ion-item lines="none" style="margin-top: 10px;">
+      <ion-label position="stacked">Categoría</ion-label>
+      <ion-select interface="action-sheet" name="categoria_id" [(ngModel)]="objProducto.categoria_id" placeholder="Selecciona una categoría">
+        <ion-select-option *ngFor="let item of categorias" [value]="item.id"> {{ item.categoria }} </ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item lines="none" style="margin-top: 10px;">
+      <ion-label position="stacked">Imagen</ion-label>
+      <ion-input type="file" accept="image/*" name="imagen" (change)="onImageChange($event)"></ion-input>
+    </ion-item>
+  
+    <ion-item lines="none" style="margin-top: 10px;">
+      <ion-label position="stacked">Stock</ion-label>
+      <ion-input type="text" placeholder="Ingrese un stock" name="stock" [(ngModel)]="objProducto.stock"></ion-input>
+    </ion-item>
+  
+    <ion-item lines="none" style="margin-top: 10px;">
+      <ion-label position="stacked">Precio</ion-label>
+      <ion-input type="text" placeholder="Ingrese un precio" name="precio" [(ngModel)]="objProducto.precio"></ion-input>
+    </ion-item>
+  
+    <ion-item lines="none" style="margin-top: 10px;">
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-textarea name="descripcion" [(ngModel)]="objProducto.descripcion" placeholder="Ingrese una descripción"></ion-textarea>
+    </ion-item>
+  
+    <ion-button (click)="guardarProducto()" expand="block" shape="round" color="primary" class="ion-margin-top">
+      <ion-icon slot="start" name="save"></ion-icon>Guardar Producto
+    </ion-button>
+    <ion-button (click)="cancelar()" expand="block" shape="round" color="dark" class="ion-margin-top">
+      <ion-icon slot="start" name="close-circle"></ion-icon>Cancelar
+    </ion-button>
+  </form>
+</ion-content>

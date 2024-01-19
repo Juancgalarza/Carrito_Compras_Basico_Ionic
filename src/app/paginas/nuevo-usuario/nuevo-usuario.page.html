@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Nuevo Usuario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-item lines="none" class="ion-margin-bottom">
+    <ion-label position="stacked">Cédula_</ion-label>
+    <ion-input type="text" placeholder="Ingrese una cédula" maxlength="10" minlength="10" [(ngModel)]="cedula"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="ion-margin-bottom">
+    <ion-label position="stacked">Nombres:</ion-label>
+    <ion-input type="text" placeholder="Ingrese los nombres" [(ngModel)]="nombres"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="ion-margin-bottom">
+    <ion-label position="stacked">Apellidos:</ion-label>
+    <ion-input type="text" placeholder="Ingrese los apellidos" [(ngModel)]="apellidos" ></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="ion-margin-bottom">
+    <ion-label position="stacked">Celular:</ion-label>
+    <ion-input type="text" placeholder="Ingrese un celular" maxlength="10" minlength="10" [(ngModel)]="celular"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="ion-margin-bottom">
+    <ion-label position="stacked">Dirección:</ion-label>
+    <ion-input type="text" placeholder="Ingrese una dirección" [(ngModel)]="direccion"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="ion-margin-bottom">
+    <ion-label position="stacked">Usuario:</ion-label>
+    <ion-input type="text" placeholder="Ingrese un usuario" [(ngModel)]="usuario"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none"class="ion-margin-bottom">
+    <ion-label position="stacked">Correo:</ion-label>
+    <ion-input type="text" placeholder="Ingrese un correo" [(ngModel)]="correo"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="ion-margin-bottom">
+    <ion-label position="stacked">Clave:</ion-label>
+    <ion-input [type]="getPasswordType()" placeholder="Ingrese una clave" [(ngModel)]="clave"></ion-input>
+    <ion-icon [name]="passwordVisible ? 'eye' : 'eye-off'" slot="end" (click)="togglePasswordVisibility()"></ion-icon>
+  </ion-item>
+
+  <ion-button (click)="registrarUsuario()" expand="block" shape="round" color="primary" class="ion-margin-top">Registrarse</ion-button>
+</ion-content>

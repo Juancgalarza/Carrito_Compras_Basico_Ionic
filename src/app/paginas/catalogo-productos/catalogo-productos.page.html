@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Catálogo De Productos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/principal-cliente"></ion-back-button>
+    </ion-buttons>
+     <!-- Botón de carrito con la cantidad -->
+     <ion-buttons slot="end">
+      <ion-button (click)="verCarrito()">
+        <ion-icon name="cart" style="font-size: 25px;"></ion-icon>
+        <ion-badge style="font-size: 13px;">{{totalItemsInCarrito}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="type" [scrollable]="true" (ionChange)="segmentChanged($event)" >
+      <ion-segment-button value="hamburguesas">
+        <ion-label class="ion-text-capitalize segmentos">Hamburguesas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="salchipapas">
+        <ion-label class="ion-text-capitalize segmentos">Salchipapas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="pizza">
+        <ion-label class="ion-text-capitalize segmentos">Pizza</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="piqueos">
+        <ion-label class="ion-text-capitalize segmentos">Piqueos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="bebidas">
+        <ion-label class="ion-text-capitalize segmentos">Bebidas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-toolbar class="color-buscar">
+    <ion-searchbar #search mode="ios" class="ion-margin-top" placeholder="Buscar Producto"
+      (ionChange)="buscar($event)">
+    </ion-searchbar>
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div [ngSwitch]="type">
+    <div *ngFor="let item of listaPro" class="ion-margin-bottom">
+      <app-producto [product]="item"></app-producto>
+    </div>
+  </div>
+</ion-content>

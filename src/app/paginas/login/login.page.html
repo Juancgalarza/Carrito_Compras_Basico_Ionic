@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Inicio De Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card color="medium" mode="ios" class="top-10 degradado" style="display: flex; align-items: center; justify-content: center;">
+    <ion-img src="/assets/img/login-circle.png" style="width: 250px; height: 250px;"></ion-img>
+  </ion-card>  
+
+  <ion-item style="padding: 10px;">
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+    <ion-icon name="person" slot="start"></ion-icon>
+  </ion-item>
+
+  <ion-item style="padding: 10px;">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [type]="getPasswordType()" placeholder="Contraseña" [(ngModel)]="clave"></ion-input>
+    <ion-icon name="{{ passwordVisible ? 'eye' : 'eye-off' }}" slot="end" (click)="togglePasswordVisibility()"></ion-icon>
+    <ion-icon name="key" slot="start"></ion-icon>
+  </ion-item>
+ 
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="12" class="ion-text-center">
+      <ion-button expand="full" color="primary" shape="round" (click)="inicarSesion()">Iniciar Sesión</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="12" class="ion-text-center">
+      <ion-button expand="full" color="primary" shape="round" (click)="irARegistro()">Registrarse</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

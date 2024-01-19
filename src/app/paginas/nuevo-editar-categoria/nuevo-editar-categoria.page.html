@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>{{titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-item lines="none" style="margin-top: 30px;">
+      <ion-label position="stacked">Categoría</ion-label>
+      <ion-input type="text" placeholder="Ingrese una categoría" name="categoria" [(ngModel)]="objCategoria.categoria"></ion-input>
+    </ion-item>
+  
+    <ion-button (click)="guardarCategoria()" expand="block" shape="round" color="primary" class="ion-margin-top">
+      <ion-icon slot="start" name="save"></ion-icon>Guardar Categoría
+    </ion-button>
+    <ion-button (click)="cancelar()" expand="block" shape="round" color="dark" class="ion-margin-top">
+      <ion-icon slot="start" name="close-circle"></ion-icon>Cancelar
+    </ion-button>
+  </ion-content>
+</ion-content>

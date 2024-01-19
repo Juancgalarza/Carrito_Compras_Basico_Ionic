@@ -1,0 +1,44 @@
+ion-content {
+    --background: #00c6ff;  /* fallback for old browsers */
+    --background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+    --background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    --overflow: auto;
+}
+
+.tamanio{
+    font-size: 35px;
+}
+
+.list-style {
+    background-color: #ffff;
+    padding: 10px;
+}
+
+.table-scroll {
+    overflow: auto;
+    flex: 1;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    border: 1px solid #3dc2ff;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #2ebdcf;
+    color: #000;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+}
+  

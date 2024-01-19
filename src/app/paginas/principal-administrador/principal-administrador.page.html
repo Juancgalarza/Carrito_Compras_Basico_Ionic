@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Administrador</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" menu="primerMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end" (click)="cerrarSesion()">
+      <ion-icon name="log-out" style="font-size: 35px;"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <div class="welcome-container">
+    <img src="assets/img/welcome2.png" alt="Welcome Image" class="welcome-image">
+    <p class="welcome-text"> <b>Solo Personal Autorizados</b>  </p>
+  </div>
+</ion-content>

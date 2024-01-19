@@ -1,0 +1,39 @@
+/* Estilos CSS para el estilo similar al primero */
+.custom-product-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    background-color: #fff;
+}
+
+.custom-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-product-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.custom-product-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0074e4;
+    margin: 10px 0;
+}
+
+.custom-product-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.custom-product-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #0074e4;
+    margin-bottom: 10px;
+}

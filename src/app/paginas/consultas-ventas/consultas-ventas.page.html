@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Consultas De Ventas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/principal-administrador"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Fecha de Inicio</ion-label>
+        <ion-input type="date" [(ngModel)]="fechaInicio"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Fecha de Fin</ion-label>
+        <ion-input type="date" [(ngModel)]="fechaFin"></ion-input>
+      </ion-item>
+
+      <ion-button mode="ios" expand="full" color="primary" (click)="consultarFechas()">Consultar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Lista de ventas -->
+    <ion-card *ngFor="let venta of dataConsulta">
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Código Venta: {{ venta.codigo }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Cliente: {{ venta.nombres }} {{ venta.apellidos }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Subtotal: {{ venta.subtotal | currency:'USD' }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>IVA: {{ venta.iva | currency:'USD' }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total: {{ venta.total | currency:'USD' }}</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>

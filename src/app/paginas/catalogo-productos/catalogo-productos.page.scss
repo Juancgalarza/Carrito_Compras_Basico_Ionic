@@ -1,0 +1,20 @@
+ion-content {
+    --background: #00c6ff;  /* fallback for old browsers */
+    --background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+    --background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.segmentos {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.7em;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,500&display=swap');
+
+.color-buscar {
+    --background: #2193b0;  /* fallback for old browsers */
+    --background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+    --background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+

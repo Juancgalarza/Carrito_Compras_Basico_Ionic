@@ -1,0 +1,22 @@
+<ion-menu contentId="principal" side="start" menuId="primerMenu">
+  <div class="menu-wrapper">
+    <div class="menu-header">
+      <ion-title>Menú de Opciones</ion-title>
+    </div>
+    
+    <ion-content class="menu-list">
+      <ion-list>
+        <ion-menu-toggle *ngFor="let objMenu of listaMenu">
+          <ion-item class="menu-item" [routerLink]="objMenu.pagina">
+            <ion-icon [name]="objMenu.icono"></ion-icon>
+            <ion-label>{{objMenu.nombre}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    
+    <div class="menu-footer">
+      <ion-title class="ion-text-wrap">APP MOVIL</ion-title>
+    </div>
+  </div>
+</ion-menu>

@@ -1,0 +1,92 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Detalle Del Carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="emptybag" *ngIf="listaMiCarrito.length === 0">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto" class="ion-padding">
+          <div class="ion-margin">
+            <ion-icon name="cart-outline" style="font-size: 80px;"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col>
+          <h4 class="ion-text-center"> <b>Su Carrito está Vacio</b> </h4>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="ion-padding-top">
+          <div class="ion-text-center">
+            <ion-text color="light">
+              <b>Navegue por las Categorías, busque su producto y añadalo al carrito.</b> 
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="ion-padding" size="auto">
+          <ion-button mode="ios" color="primary" size="large" expand="block" shape="round" (click)="irProductos()">
+            Añadir Productos
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="container" *ngIf="listaMiCarrito.length != 0">
+    <h4 class="ion-text-center titulo"> <b>Productos de mi Carrito</b> </h4>
+    <ion-card>
+      <table class="carrito-table">
+        <thead>
+          <tr>
+            <th>Cantidad</th>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Itera sobre los productos en el carrito -->
+          <tr *ngFor="let producto of listaMiCarrito">
+            <td>{{ producto.cantidad }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.precio | currency:'USD' }}</td>
+            <td>{{ (producto.precio * producto.cantidad) | currency:'USD' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-card>
+
+    <ion-card class="color-card">
+      <ion-card-content class="custom-card-content">
+        <ion-item lines="none" class="custom-item">
+          <ion-label class="custom-label">Subtotal:</ion-label>
+          <ion-label class="custom-value" slot="end">{{ calcularSubtotal() | currency:'USD' }}</ion-label>
+        </ion-item>
+        <ion-item lines="none" class="custom-item">
+          <ion-label class="custom-label">IVA:</ion-label>
+          <ion-label class="custom-value" slot="end">{{ calcularIVA() | currency:'USD' }}</ion-label>
+        </ion-item>
+        <ion-item lines="none" class="custom-item">
+          <ion-label class="custom-label">Total A Pagar:</ion-label>
+          <ion-label class="custom-value" slot="end">{{ calcularTotal() | currency:'USD' }}</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+ 
+    <ion-button mode="ios" size="large" color="primary" expand="block" shape="round" (click)="guardarCompra()">
+      <ion-icon slot="start" name="bag-check-outline"></ion-icon> Generar Compra
+    </ion-button>
+    <ion-button mode="ios" size="large" color="primary" expand="block" shape="round" (click)="irACatlogo()">
+      <ion-icon slot="start" name="bag-add-outline"></ion-icon> Seguir Comprando
+    </ion-button>
+  </div>
+
+</ion-content>
